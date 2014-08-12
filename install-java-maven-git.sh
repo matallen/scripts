@@ -2,17 +2,22 @@ ssh -t $1 -l root <<EOF
 
 set -x
 
+rm -rf /opt/rh
 mkdir -p /opt/rh
 cd /opt/rh
 
+rm -rf /bin/java
+rm -rf /bin/mvn
+
+
 # install java 7
-wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz
+wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz -O jdk-7u67-linux-x64.tar.gz
 gunzip jdk-7u67-linux-x64.tar.gz
 tar -xvf jdk-7u67-linux-x64.tar
 ln -s /opt/rh/jdk1.7.0_67 /opt/rh/jdk1.8_latest
 
 # install java 8
-wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u11-b12/jdk-8u11-linux-x64.tar.gz
+wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u11-b12/jdk-8u11-linux-x64.tar.gz -O jdk-8u11-linux-x64.tar.gz
 gunzip jdk-8u11-linux-x64.tar.gz
 tar -xvf jdk-8u11-linux-x64.tar
 ln -s /opt/rh/jdk1.8.0_11 /opt/rh/jdk1.8_latest
