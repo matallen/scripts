@@ -33,6 +33,7 @@ ln -s /opt/rh/apache-maven-3.2.1 /opt/rh/maven_current
 ln -s /opt/rh/maven_current/bin/mvn /bin/mvn
 export M2_HOME=/opt/rh/maven_current
 
+yum install -y git
 
 set +x
 
