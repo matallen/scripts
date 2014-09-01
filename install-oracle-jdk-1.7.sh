@@ -12,4 +12,5 @@ for folder in $JDKS
 do
  ln -s $folder jdk_current
  ln -s `pwd`/jdk_current/bin/java /bin/java
+ export JAVA_HOME=/opt/rh/jdk_current
 done
