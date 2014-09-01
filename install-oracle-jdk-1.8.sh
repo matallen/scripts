@@ -5,7 +5,7 @@ cd /opt/rh
 
 wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u11-b12/jdk-8u11-linux-x64.tar.gz
 gunzip jdk-8u11-linux-x64.tar.gz
-tar -xvf jdk-8u11-linux-x64.tar.gz
+tar -xvf jdk-8u11-linux-x64.tar
 
 JDKS=`find . -maxdepth 1 -name "jdk*" -type d`;
 for folder in $JDKS
